@@ -1,6 +1,6 @@
 function capitalizarTitulo(frase) {
   if (typeof frase !== 'string' || frase.trim() === '') {
-    return '';
+    throw new TypeError('La frase debe ser un string no vacío');
   }
 
   return frase
@@ -9,5 +9,7 @@ function capitalizarTitulo(frase) {
     .map(palabra => palabra.charAt(0).toUpperCase() + palabra.slice(1).toLowerCase())
     .join(' ');
 }
+
+
 
 module.exports = capitalizarTitulo;
