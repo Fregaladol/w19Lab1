@@ -1,10 +1,22 @@
 {
   "name": "w19lab1",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest --verbose --coverage --collectCoverage"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true,
+    "reporters": [
+      "default",
+      ["jest-html-reporter", {
+        "pageTitle": "Test Report",
+        "outputPath": "test-report.html"
+      }]],
+      
+        "collectCoverage": true,
+        "coverageDirectory": "coverage", 
+        "coverageReporters": ["html"] 
   },
   "keywords": [],
   "author": "",
